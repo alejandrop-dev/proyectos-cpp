@@ -1,0 +1,68 @@
+//Hacer un que realice la serie fibonacci -- 1 1 2 3 5 8 13...n  
+#include<iostream>
+#include<limits>
+using namespace std;
+int main (){
+	
+	cout<<"\tEste programa va a realizar lo siguiente: 1 1 2 3 5 8 13...n"<<endl;
+	
+	int n,x=0,y=1,suma=1;
+	
+	while(true){
+		
+		cout<<"Ingrese el valor de n:";
+		cin>>n;
+		
+			if(cin.fail()){
+			cout<<"\nEl dato ingresado es invalido"<<endl;
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(),'\n');
+			}
+			
+			else if(n<=0){
+			cout<<"\nEl valor de n no puede ser menor o igual a 0"<<endl;
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(),'\n');
+			}
+			
+			else{
+				break;
+			}
+	}
+
+	
+	cout<<"\nValor de n"<<endl;
+	cout<<"n:"<<n<<endl;
+	
+	cout<<"\nSerie fibonacci"<<endl;
+	
+	if(n==1){
+		cout<<"1";
+	}
+	
+	else{
+	
+	cout<<"1  ";
+	
+		for(int i=1;i<n;i++){                 
+		
+		suma=x+y;
+		cout<<suma;
+		x=y;
+		y=suma;
+		
+			if(i<n){
+			cout<<"  ";
+			}
+		
+		}
+	
+	}
+	
+	
+	cout<<"\n";
+	cout<<"\nPress enter to exit...";
+	cin.ignore();
+	cin.get();
+	return 0;
+}
